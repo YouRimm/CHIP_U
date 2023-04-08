@@ -1,0 +1,123 @@
+#header { /* 헤더 부분(로고와 로그인 라인, 메인메뉴, 서브 드롭다운메뉴) */
+    display: flex; /* flex box형 컨테이너 */
+    flex-direction: column; /* flex box 내 아이템들 정렬 - 세로 */
+    /* position: fixed; /* 포지션 타 객체에 영향 안받고 고정하는 용 */
+    height: 200px; /* 헤더 길이 */
+    background-color: red; /* 배경색 */
+}
+#header_top { /* 헤더 내 최상단 라인(로고, 로그인창 위치) */
+    flex: 3;
+    display: flex;
+    align-items: center; /* 컨테이너 내 요소들(items) 가운데 정렬 */
+    justify-content: space-between;/* flex 컨테이너 내 요소들 수평 정렬 방식 */
+    background-color: orange;
+}
+#header_top_logobox { /* 로고 담고있는 컨테이너 */
+    padding-left: 100px; /* 안쪽 왼쪽 여백 */
+    background-color: khaki;
+}
+.header_top_logobox_logo { /* 로고 디자인 */
+    font-weight: bold; /* 폰트 두껍게 */
+}
+#header_top_userbox { /* 로그인 메뉴(로그인, 회원가입 버튼) */
+    overflow: initial;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    background-color: yellow;
+}
+#header_top_userbox_button { /* 로그인, 회원가입 버튼 디자인 */
+    padding: 5px 5px; /* 위아래, 좌우 내부여백 */
+    background-color: green;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+#header_top_userbox_button:hover { /*로그인창 버튼 위에 마우스 대면 손모양 */
+    cursor: pointer;
+}
+.header_top_userbox_input { /* 로그인 입력 창 */
+    margin-left: 0px;
+    margin-right: 0px;
+}
+#header_menu_main { /* 메인 메뉴 속성 */
+    background-color: blue;
+    flex: 1;
+}
+#header_menu_main ul { /* 메인 메뉴의 ul(+ 서브 메뉴) */
+    text-align: center;
+    list-style-type: none; /* 리스트 목록 타입을 없애줌 (1,2,3같은거) */
+    margin: 0 auto;
+    padding: 0;
+    background-color: navy;
+}
+#header_menu_main ul li { /* 메인 메뉴의 ul 안의 li 태그 속성(서브 메뉴) */
+    display: inline-block; /* 메인 메뉴 중앙정렬 위해 리스트 속성들 블록 처리 */
+    line-height: 30px; /* 텍스트 한 줄 높이 설정 */
+    min-width: 100px; /* 이거 낮으면 서브 메뉴 줄 안바뀜 계속 수정해야할듯 */
+    text-align: center; /* 텍스트를 가운데로 정렬 */
+    vertical-align: middle; /* 세로 정렬을 가운데로 */
+    position: relative; /* 상대적 정렬, 하위 컨테이너가 위에 나오는듯. 여기서는 li 태그 내부 포지션 초기화로 쓰임 */
+    background-color: navy;
+}
+.header_menu_sub { /* 서브메뉴 */
+    position: absolute; /* HTML flow 영향 안받게 absolute로 */
+    height: 0; /* 첨에 숨겨져있어야 초기 높이 * */
+    overflow: hidden; /* 내용이 높이 이상 못넘어가게. 넘어가는 건 다 숨김. */
+    transition: height 1s; /* 높이 변화 시 1초 걸리게(드롭다운) */
+}
+.header_menu_main_button .header_menu_sub_button { /* 전체 메뉴의 버튼들 */
+    text-decoration: none; /* a 태그의 꾸밈 효과 제거 */
+    display: block; /* a 태그의 클릭 범위를 넓힘 */
+    width: 150px; /* 기본 넓이를 150px로 설정 */
+    font-size: 12px; /* 폰트 사이즈를 12px로 설정 */   
+    font-weight: bold; /* 폰트를 굵게 설정 */
+    font-family: "Trebuchet MS", Dotum; /* 기본 폰트를 영어/한글 순서대로 설정 */
+}
+.header_menu_main_button { /* 메인 메뉴 버튼들 스타일은 따로 설정 */
+    margin-left: 30px;
+    margin-right: 30px;
+    color: black;
+}
+.header_menu_sub_button { /* 역시 서브 메뉴 버튼들도 스타일 따로 */
+    margin-top: -1px;
+    color: black;
+}
+.header_menu_main_li:hover .header_menu_main_button { /* 메인 메뉴 버튼에 마우스 오버 시 효과 */
+    color: white;
+    background-color: blue;
+}
+.header_menu_main_li:hover .header_menu_sub { /* 메인 메뉴에 마우스 오버 시 하위 메뉴 나오게 */
+    height: auto;
+    width: auto;
+}
+#body { /* 바디 창 */
+    display: flex;
+    height: 800px;
+    color: black;
+    background-color: purple;
+    margin: 0 auto;
+    text-align: center;
+    /* padding-top: 200px; /* 헤더 고정할거면 헤더 상단 고정값만큼 패딩 줘야함 */
+}
+#body_nav { /* 바디 부분의 좌측 사이드바 */
+    flex: 3; /* 대충 나누는 비율같은 느낌 */
+    background-color: royalblue;
+}
+#body_section { /* 바디의 중앙 본문 내용 */
+    flex: 8;
+    padding: 20px;
+}
+#body_aside { /* 바디 우측의 추가 창 */ 
+    flex: 2;
+    background-color: slateblue;
+}
+#footer { /* 최하단 푸터 */
+    margin-top: -16px; /* 위 바디 섹션하고 붙일라고 */
+    height: 100px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}

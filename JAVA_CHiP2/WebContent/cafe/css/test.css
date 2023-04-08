@@ -1,0 +1,115 @@
+*{margin:0;padding:0;}
+
+#seat_intro_interior {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* 좌석 소개 안내글 */
+.seat_intro_interior_doc{
+  margin-bottom: 50px;
+  display: inline-block;
+  text-align: center;
+  background-color: thistle;
+}
+
+/* 좌석 배치 및 조회 */
+#seat_intro_interior_blueprint {
+  display: flex;
+  width: 50%;
+  height: 400px;
+  align-self: center;
+  justify-content: center;
+  background-color: white;
+}
+
+/* 마우스 오버시 뜨는 팝업설명창 */
+  .overLayer {
+    position: relative;
+    display: none;
+    width: 200px;
+    height: 300px;
+    border: 2px solid gray;
+    background-color:#FFF;
+    padding:10px;
+    line-height:30px; /* 줄간 */
+    font-weight:100
+  }
+
+  /* 팝업창 사진 */
+  #seatImage {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50%;
+    object-fit: fill;
+  }
+
+  /* 팝업창 글 요소 */
+  #maintitle {
+    font-size: 30px;
+  }
+
+  #subtitle {
+    font-size: 12px;
+    color: rgb(60, 60, 60);
+  }
+
+  #seatExplain {
+    font-size: 20px;
+  }
+
+/**/
+
+/* 좌석 배치도 테이블 */
+.tableLayer {
+  text-align: center;
+  table-layout: fixed;
+  width: 100%;
+  height: 400px;
+  border: 3px solid black;
+}
+
+/* 배치도 테이블 td */
+.tableLayer td {
+  font-size: 10pt;
+  height: 30px;
+}
+
+/* 예약 가능 좌석 */
+.use{
+  border: 3px solid black;
+  background-color: skyblue;
+}
+
+/* 예약 불가(공용) 시설 */
+.notUse {
+  border: 3px solid black;
+  background-color: gray;
+}
+
+/* 예약 선택 창 */
+  .seat_reserve_seatState_inputBox {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .inquiry_seat {
+    display: flex;
+    font-size: 13px;
+  }
+/**/
+
+#btn_gotoReserve {
+  align-self: center;
+  margin-top: 50px;
+  width: 100px;
+  height: 60px;
+  cursor: pointer;
+  font-size: 12px;
+}
