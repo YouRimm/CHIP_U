@@ -17,7 +17,7 @@
 		// 							db주소 : 포트번호/db명
 		String url = "jdbc:mysql://localhost:3306/chip";//3306뒤에 :db이름  추가하면 됨
 		String uId = "root";	// 유저 ID
-		String uPw = "dpzbdpf12!";	// 유저 PW
+		String uPw = "private pw";	// 유저 PW
 		try{
 			Class.forName(driver);
 			conn = DriverManager.getConnection(url, uId, uPw);

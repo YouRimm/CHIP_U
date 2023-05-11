@@ -10,14 +10,14 @@ public class DatabaseUtil {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/chip"; 
 			String dbID = "root";
-			String dbPassword = "dpzbdpf12!";
+			String dbPassword = "private pw";
 			Class.forName("com.mysql.jdbc.Driver");
 
 			return DriverManager.getConnection(dbURL, dbID, dbPassword);
 
 		} catch (Exception e) {
 
-			e.printStackTrace(); // ¿À·ù°¡ ¹«¾ùÀÎÁö Ãâ·Â
+			e.printStackTrace(); // Â¿Ã€Â·Ã¹Â°Â¡ Â¹Â«Â¾Ã¹Ã€ÃÃÃ¶ ÃƒÃ¢Â·Ã‚
 
 	}
 		return null;
