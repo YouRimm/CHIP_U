@@ -39,31 +39,39 @@ public class UserDAO {
 
 	// 로그인기능
 
-	/*
-	 * public int login(String id, String pw) { String sql =
-	 * "SELECT pw FROM user WHERE id = ?"; //users에서 user로 바꿈 try { pstmt =
-	 * conn.prepareStatement(sql); pstmt.setString(1, id);
-	 * 
-	 * // rs:result set 에 결과보관
-	 * 
-	 * rs = pstmt.executeQuery();
-	 * 
-	 * // 결과가 존재한다면 실행 if (rs.next()) {
-	 * 
-	 * // 패스워드 일치한다면 실행 if (rs.getString(1).equals(pw)) {
-	 * 
-	 * return 1; // 성공
-	 * 
-	 * } else
-	 * 
-	 * return 0; // 비밀번호 불일치 }
-	 * 
-	 * return -1; // 아이디가 없음 오류
-	 * 
-	 * } catch (Exception e) {
-	 * 
-	 * e.printStackTrace(); } return -2; // 데이터베이스 오류 }
-	 */
+	
+	public int login(String id, String pw) {
+		String sql = "SELECT pw FROM users WHERE id = ?";
+		try {			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			// rs:result set 에 결과보관
+
+			rs = pstmt.executeQuery();
+
+			// 결과가 존재한다면 실행
+			if (rs.next()) {
+
+				// 패스워드 일치한다면 실행
+				if (rs.getString(1).equals(pw)) {
+
+					return 1; // 성공
+
+				} else
+
+					return 0; // 비밀번호 불일치
+			}
+
+			return -1; // 아이디가 없음 오류
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return -2; // 데이터베이스 오류
+	}
+	 
 	
 	
 	public int signup (UserDTO user) {

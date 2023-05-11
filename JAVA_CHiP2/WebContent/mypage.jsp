@@ -210,7 +210,7 @@
   <footer id="footer">
     <div class="container">
       <h3>JAVA CHiP</h3>
-      <p>JSP와 서블릿 강의 조별 프로젝트 J조의 홈페이지 입니다.</p>
+      <p>J조의 자바칩 홈페이지 입니다.</p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
